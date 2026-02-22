@@ -1,0 +1,3 @@
+repository "Unity_Projektordner/Unity_Projektordner@9072294748022@cloud"
+  path "/"
+    smartbranch "/main"

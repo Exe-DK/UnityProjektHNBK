@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 1dd47bf58c2bea64a8a5efa3b21069c8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PanelAusgang: {instanceID: 0}
+  - PanelTyristoren1: {instanceID: 0}
+  - PanelTyristoren2: {instanceID: 0}
+  - PanelEinspeisung: {instanceID: 0}
+  - PanelB6: {instanceID: 0}
+  - PanelPotFrei: {instanceID: 0}
+  - PanelPoti: {instanceID: 0}
+  - PanelBrems: {instanceID: 0}
+  - PanelTrenn: {instanceID: 0}
+  - Panel24V: {instanceID: 0}
+  - GIO: {instanceID: 0}
+  - RFR: {instanceID: 0}
+  - V24ext: {instanceID: 0}
+  - DI3brem: {instanceID: 0}
+  - DI3Dreh: {instanceID: 0}
+  - DI1: {instanceID: 0}
+  - DI2: {instanceID: 0}
+  - DO1: {instanceID: 0}
+  - T1: {instanceID: 0}
+  - CZ: {instanceID: 0}
+  - VB: {instanceID: 0}
+  - Erde: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

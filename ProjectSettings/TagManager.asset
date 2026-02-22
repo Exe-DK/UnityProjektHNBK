@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Trigger1
+  - Trigger Kontakte ausgang
+  - Trigger Tyristoren1
+  - Trigger Tyristoren2
+  - Trigger Einspeisung
+  - Trigger B6
+  - Trigger Pot.Frei.Kont
+  - Trigger Poti
+  - Trigger Brems
+  - Trigger Trenn
+  - Trigger 24V
+  - Trigger GIO
+  - Trigger RFR
+  - Trigger 24V Ext
+  - Trigger DI3 High Pegel Brem
+  - Trigger DI3 Dreh
+  - Trigger DI1 40%
+  - Trigger DI2 60%
+  - 'Trigger DO1 '
+  - Trigger T1
+  - Trigger CZ
+  - Trigger VB
+  - Trigger Erde
+  - TriggerDO1
+  - TriggerFU
+  - Trigger01U
+  - Trigger Motor
+  - Trigger Plus
+  - Trigger Minus
+  - Frequenzumrichter
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Trigger Layer
+  - Water
+  - UI
+  - Interactable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 205783131
+    locked: 0
