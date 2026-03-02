@@ -636,8 +636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde4fdde226188041a87ce0e002e39bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
-  movement: {fileID: 0}
-  mouseLook: {fileID: 0}
+  movement: {fileID: 1200540896}
+  mouseLook: {fileID: 355127716}
 --- !u!4 &26718190
 Transform:
   m_ObjectHideFlags: 0
@@ -646,12 +646,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26718188}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.00626, y: 25.15114, z: -39.78664}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.51031774, z: -0, w: 0.85998595}
+  m_LocalPosition: {x: -10.507933, y: 13.754245, z: 11.346116}
+  m_LocalScale: {x: 1, y: 0.71819454, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 421341766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &30153786
 GameObject:
@@ -6490,12 +6490,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355127715}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.1887, y: 25.15114, z: -39.74058}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.51031774, z: -0, w: 0.85998595}
+  m_LocalPosition: {x: -10.380084, y: 13.754245, z: 11.208044}
+  m_LocalScale: {x: 1, y: 0.71819454, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 421341766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357241842
 GameObject:
@@ -7263,7 +7263,6 @@ GameObject:
   - component: {fileID: 375778186}
   - component: {fileID: 375778185}
   - component: {fileID: 375778184}
-  - component: {fileID: 375778187}
   - component: {fileID: 375778191}
   - component: {fileID: 375778188}
   - component: {fileID: 375778190}
@@ -7360,18 +7359,6 @@ Canvas:
   m_SortingLayerID: 205783131
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!114 &375778187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375778182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd5e62e58cab6c54ca2aabb4589959b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &375778188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8231,7 +8218,7 @@ GameObject:
   - component: {fileID: 421341770}
   - component: {fileID: 421341771}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8332,7 +8319,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1.3923805, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 26718190}
+  - {fileID: 1200540897}
   - {fileID: 1203085108}
+  - {fileID: 355127717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -61.37, z: 0}
 --- !u!114 &421341767
@@ -19197,7 +19187,6 @@ MonoBehaviour:
   CZ: {fileID: 0}
   VB: {fileID: 0}
   Erde: {fileID: 0}
-  ASYM: {fileID: 0}
   isPaused: 0
 --- !u!4 &985358441
 Transform:
@@ -25108,7 +25097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d3003dcf11d2f47a439715336e0e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  controller: {fileID: 0}
+  controller: {fileID: 421341763}
   speed: 1
   groundMask:
     serializedVersion: 2
@@ -25121,12 +25110,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200540895}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.2835, y: 25.15114, z: -39.71666}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.51031774, z: -0, w: 0.85998595}
+  m_LocalPosition: {x: -10.313669, y: 13.754245, z: 11.136308}
+  m_LocalScale: {x: 1, y: 0.71819454, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 421341766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203085107
 GameObject:
@@ -25259,7 +25248,6 @@ MonoBehaviour:
   CZ: {fileID: 950732844}
   VB: {fileID: 1556469957}
   Erde: {fileID: 13783553}
-  ASYM: {fileID: 0}
   isPaused: 0
 --- !u!114 &1203085115
 MonoBehaviour:
@@ -45533,8 +45521,5 @@ SceneRoots:
   - {fileID: 704366666}
   - {fileID: 824183473}
   - {fileID: 1389944483}
-  - {fileID: 1200540897}
-  - {fileID: 355127717}
   - {fileID: 985358441}
-  - {fileID: 26718190}
   - {fileID: 43972158}
