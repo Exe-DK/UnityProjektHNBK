@@ -48,6 +48,16 @@ public class Berechnung : MonoBehaviour
     public float Wirkungsgrad;
     public float Iap;           //Strom im Arbeitspunkt, nach Näherung 2. Ordnung
    
+void Start()
+{
+
+    if (drehmomentText == null) Debug.LogError("drehmomentText nicht zugewiesen!");
+    if (drehzahlText == null) Debug.LogError("drehzahlText nicht zugewiesen!");
+    if (bremseText == null) Debug.LogError("bremseText nicht zugewiesen!");
+    if (stromText == null) Debug.LogError("stromText nicht zugewiesen!");
+    if (drehmoment2Text == null) Debug.LogError("drehmoment2Text nicht zugewiesen!");
+    if (drehzahl2Text == null) Debug.LogError("drehzahl2Text nicht zugewiesen!");
+}
 
     void Update()
     {
@@ -119,14 +129,29 @@ public class Berechnung : MonoBehaviour
 
             // Berechnung des Wirkungsgrads
         Wirkungsgrad = (Pzu != 0) ? (Pab / Pzu) * 100f : 0f;
+        if (stromText != null)
+        stromText.text = nI.ToString("F2");
 
-            // Aktualisieren der Textfelder
-        drehmomentText.text = "" + Map.ToString("F2");
-        drehzahlText.text = "" + nAP.ToString("F2");
-        bremseText.text = "" + drehmomentBremse.ToString("F1");
-        stromText.text = "" + nI.ToString("F2");
-        drehmoment2Text.text = "" + Map.ToString("F2");
-        drehzahl2Text.text = "" + nAP.ToString("F2");
+
+
+// Aktualisieren der Textfelder
+if (drehmomentText != null)
+    drehmomentText.text = Map.ToString("F2");
+
+if (drehzahlText != null)
+    drehzahlText.text = nAP.ToString("F2");
+
+if (bremseText != null)
+    bremseText.text = drehmomentBremse.ToString("F1");
+
+if (stromText != null)
+    stromText.text = nI.ToString("F2");
+
+if (drehmoment2Text != null)
+    drehmoment2Text.text = Map.ToString("F2");
+
+if (drehzahl2Text != null)
+    drehzahl2Text.text = nAP.ToString("F2");
 
         
     }
