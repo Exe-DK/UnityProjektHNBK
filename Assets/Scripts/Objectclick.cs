@@ -29,14 +29,14 @@ public class Objectclick : MonoBehaviour
     public GameObject CZ;
     public GameObject VB;
     public GameObject Erde;
-    public GameObject ASYM;
+    //public GameObject ASYM;
     public int isPaused = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        ASYM.SetActive(false);
+        //ASYM.SetActive(false);
         PanelAusgang.SetActive(false);
         PanelTyristoren1.SetActive(false);
         PanelTyristoren2.SetActive(false);
@@ -339,7 +339,7 @@ public class Objectclick : MonoBehaviour
 
             }
         }
-        if (isPaused == 1 && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.escapeKey.wasPressedThisFrame)) //NEU zusätzliche Bedingungen
+        if (isPaused == 1 && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.escapeKey.wasPressedThisFrame)) //NEU zusï¿½tzliche Bedingungen
         { 
             PanelAusgang.SetActive(false);
             PanelTyristoren1.SetActive(false);

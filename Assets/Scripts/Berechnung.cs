@@ -57,6 +57,12 @@ public class Berechnung : MonoBehaviour
 
         Kippschlupf = RotorWirkwiderstand / Hauptblindwiderstand;
         synchronDrehzahl = (120 * Frequenz) / AnzahlPole;
+        // Schutz gegen Division durch 0 bei synchronDrehzahl
+        if (Mathf.Abs(synchronDrehzahl) < 0.0001f)
+        {
+        synchronDrehzahl = 0.0001f;
+        }
+
         synchronFrequenz = synchronDrehzahl / 60f;
 
             // Berechnung Schlupf gemäß der neuen Formel
@@ -71,9 +77,22 @@ public class Berechnung : MonoBehaviour
 
             // Berechnung Drehmoment im Arbeitspunkt (mit Drehmomentbremse)
         DrehmomentAP = Nennmoment + drehmomentBremse;
+     
+                 // --- Schutz gegen Division durch 0 (physikalisch sinnvoll) ---
+        if (Mathf.Abs(SchlupfAP) < 0.0001f)
+        {
+        SchlupfAP = 0.0001f;
+        }
+        if (Mathf.Abs(Nennmoment) < 0.0001f)
+        {
+        Nennmoment = 0.0001f;
+        }
+
             //Berechnung anderer Werte im Arbeitspunkt nach Näherung 2. Ordnung
-        SchlupfAP = Schlupf * (DrehmomentAP /  Nennmoment);  
-        //SchlupfAP = ((Kippschlupf * (Kippmoment - Mathf.Pow(((Kippmoment + DrehmomentAP) * (Kippmoment - DrehmomentAP)), 1f / 2f))) / DrehmomentAP);
+        SchlupfAP = Schlupf * (DrehmomentAP /  Nennmoment); 
+        SchlupfAP = Mathf.Max(Mathf.Abs(SchlupfAP), 0.0001f); 
+
+            //SchlupfAP = ((Kippschlupf * (Kippmoment - Mathf.Pow(((Kippmoment + DrehmomentAP) * (Kippmoment - DrehmomentAP)), 1f / 2f))) / DrehmomentAP);
         DrehzahlAP = (1 - SchlupfAP) * synchronDrehzahl;
         Iap = Nennstrom * (DrehmomentAP / Nennmoment);
 
@@ -108,5 +127,7 @@ public class Berechnung : MonoBehaviour
         stromText.text = "" + nI.ToString("F2");
         drehmoment2Text.text = "" + Map.ToString("F2");
         drehzahl2Text.text = "" + nAP.ToString("F2");
+
+        
     }
 }
