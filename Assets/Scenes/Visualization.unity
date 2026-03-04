@@ -25367,7 +25367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6072f3c860e45c8ba16775c4d46510b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrosshairHover
-  erfassungsreichweite: 5
+  erfassungsreichweite: 4.8
   debugRaycast: 0
 --- !u!1 &1211190671
 GameObject:
@@ -25793,6 +25793,7 @@ GameObject:
   - component: {fileID: 1240530855}
   - component: {fileID: 1240530854}
   - component: {fileID: 1240530853}
+  - component: {fileID: 1240530856}
   m_Layer: 6
   m_Name: CubePlus
   m_TagString: Untagged
@@ -25973,7 +25974,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240530845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
@@ -25981,6 +25982,23 @@ MonoBehaviour:
   normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   fadeSpeed: 7
+  buttonImage: {fileID: 0}
+  uiImage: {fileID: 0}
+--- !u!114 &1240530856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240530845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  fadeSpeed: 5
   buttonImage: {fileID: 0}
   uiImage: {fileID: 0}
 --- !u!1 &1241372454
