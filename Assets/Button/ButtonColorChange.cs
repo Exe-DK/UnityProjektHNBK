@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events; // ✅ NEU
+using UnityEngine.Events;
 
 public class ButtonColorChange : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class ButtonColorChange : MonoBehaviour
     [Range(0.1f, 20f)] public float fadeSpeed = 5f;
 
     [Header("Klick-Event")]
-    public UnityEvent onClick; // ✅ NEU – erscheint im Inspector!
+    public UnityEvent onClick;
 
     [Header("Bild-Referenz (optional)")]
     public SpriteRenderer buttonImage;
@@ -20,41 +20,26 @@ public class ButtonColorChange : MonoBehaviour
     private Material material;
     private bool isHovering = false;
     private Color currentColor;
-<<<<<<< Updated upstream
-=======
-    private Color normalColor;
->>>>>>> Stashed changes
 
-    void Start()
+       void Start()
     {
         objRenderer = GetComponent<Renderer>();
 
         if (objRenderer != null)
         {
-            // Material kopieren
             material = new Material(objRenderer.material);
             objRenderer.material = material;
 
-<<<<<<< Updated upstream
-            // ✅ Wichtig: Farbe auf dem Material setzen, 
-            // auch wenn eine Textur drauf liegt!
-            material.color = normalColor;
-
-            // ✅ Falls das Shader "_BaseColor" nutzt (URP/HDRP)
-=======
->>>>>>> Stashed changes
             if (material.HasProperty("_BaseColor"))
-            {
-                material.SetColor("_BaseColor", normalColor);
-            }
+                normalColor = material.GetColor("_BaseColor");
+            else
+                normalColor = material.color;
         }
 
         currentColor = normalColor;
 
         if (buttonImage == null)
             buttonImage = GetComponentInChildren<SpriteRenderer>();
-<<<<<<< Updated upstream
-=======
 
         if (material == null)
         {
@@ -63,41 +48,26 @@ public class ButtonColorChange : MonoBehaviour
             else if (uiImage != null)
                 normalColor = uiImage.color;
         }
->>>>>>> Stashed changes
     }
 
     void Update()
     {
-<<<<<<< Updated upstream
-        // Sanfter Farbwechsel
-=======
-        // ✅ NEU – Klick erkennen wenn Hover aktiv
         if (isHovering && Input.GetMouseButtonDown(0))
-        {
             onClick.Invoke();
-        }
 
->>>>>>> Stashed changes
         Color targetColor = isHovering ? hoverColor : normalColor;
         currentColor = Color.Lerp(currentColor, targetColor, fadeSpeed * Time.deltaTime);
 
-        // ✅ 3D-Material Farbe ändern (funktioniert auch MIT Textur)
         if (material != null)
         {
             material.color = currentColor;
-
-            // ✅ Für URP/HDRP Shader
             if (material.HasProperty("_BaseColor"))
-            {
                 material.SetColor("_BaseColor", currentColor);
-            }
         }
 
-        // ✅ SpriteRenderer Farbe
         if (buttonImage != null)
             buttonImage.color = currentColor;
 
-        // ✅ UI Image Farbe
         if (uiImage != null)
             uiImage.color = currentColor;
     }

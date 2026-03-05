@@ -1165,6 +1165,8 @@ GameObject:
   - component: {fileID: 39568606}
   - component: {fileID: 39568608}
   - component: {fileID: 39568607}
+  - component: {fileID: 39568610}
+  - component: {fileID: 39568609}
   m_Layer: 0
   m_Name: Zylinder.029 (1)
   m_TagString: Untagged
@@ -1244,8 +1246,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39568605}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &39568609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -1286,7 +1287,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009993913, y: 0.0009987829, z: 0.008000002}
   m_Center: {x: -0.0000000062573235, y: 0.00000059406744, z: 0.0000038146973}
->>>>>>> Stashed changes
 --- !u!1 &43972157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -10123,13 +10124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
-<<<<<<< Updated upstream
   normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-=======
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
->>>>>>> Stashed changes
-  fadeSpeed: 5.03
+  fadeSpeed: 5
   onClick:
     m_PersistentCalls:
       m_Calls:
@@ -13475,6 +13472,8 @@ GameObject:
   - component: {fileID: 644728157}
   - component: {fileID: 644728159}
   - component: {fileID: 644728158}
+  - component: {fileID: 644728161}
+  - component: {fileID: 644728160}
   m_Layer: 0
   m_Name: Zylinder.001 (1)
   m_TagString: Untagged
@@ -13554,8 +13553,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644728156}
   m_Mesh: {fileID: 3708161096541314799, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &644728160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13568,6 +13565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -13596,7 +13594,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009993914, y: 0.0009987828, z: 0.008000002}
   m_Center: {x: 0.0000000011932572, y: 0.0000006089687, z: 2.8357326e-16}
->>>>>>> Stashed changes
 --- !u!1 &649144404
 GameObject:
   m_ObjectHideFlags: 0
@@ -14232,6 +14229,8 @@ GameObject:
   - component: {fileID: 678952390}
   - component: {fileID: 678952392}
   - component: {fileID: 678952391}
+  - component: {fileID: 678952394}
+  - component: {fileID: 678952393}
   m_Layer: 0
   m_Name: Zylinder.029 (1)
   m_TagString: Untagged
@@ -14311,8 +14310,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678952389}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &678952393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14325,6 +14322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -14353,7 +14351,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009993913, y: 0.0009987829, z: 0.008000002}
   m_Center: {x: -0.0000000062573235, y: 0.0000006089686, z: -6.90943e-14}
->>>>>>> Stashed changes
 --- !u!1 &681407247
 GameObject:
   m_ObjectHideFlags: 0
@@ -14513,6 +14510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -16556,6 +16554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -16652,6 +16651,8 @@ GameObject:
   - component: {fileID: 778314802}
   - component: {fileID: 778314804}
   - component: {fileID: 778314803}
+  - component: {fileID: 778314806}
+  - component: {fileID: 778314805}
   m_Layer: 0
   m_Name: Zylinder.029 (1)
   m_TagString: Untagged
@@ -16731,8 +16732,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778314801}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &778314805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16745,6 +16744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -16820,6 +16820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -16905,7 +16906,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780832578}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &800863851
 GameObject:
   m_ObjectHideFlags: 0
@@ -22568,18 +22568,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033556773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
-<<<<<<< Updated upstream
   normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-=======
-  hoverColor: {r: 1, g: 0, b: 1, a: 1}
->>>>>>> Stashed changes
-  fadeSpeed: 5.03
+  fadeSpeed: 5
   onClick:
     m_PersistentCalls:
       m_Calls: []
@@ -25379,13 +25375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
-<<<<<<< Updated upstream
   normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-=======
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
->>>>>>> Stashed changes
-  fadeSpeed: 5.03
+  fadeSpeed: 5
   onClick:
     m_PersistentCalls:
       m_Calls:
@@ -27032,6 +27024,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrosshairHover
   erfassungsreichweite: 4.8
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   debugRaycast: 0
 --- !u!1 &1211190671
 GameObject:
@@ -32393,6 +32388,8 @@ GameObject:
   - component: {fileID: 1440118811}
   - component: {fileID: 1440118813}
   - component: {fileID: 1440118812}
+  - component: {fileID: 1440118815}
+  - component: {fileID: 1440118814}
   m_Layer: 0
   m_Name: Zylinder.033 (1)
   m_TagString: Untagged
@@ -32472,8 +32469,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440118810}
   m_Mesh: {fileID: 1291568986444099534, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1440118814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32486,6 +32481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 7
   onClick:
@@ -32514,7 +32510,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009993914, y: 0.0009987827, z: 0.008000001}
   m_Center: {x: -0.0000000025320332, y: 0.0000006089686, z: 0.0000009536743}
->>>>>>> Stashed changes
 --- !u!1 &1443590144
 GameObject:
   m_ObjectHideFlags: 0
@@ -33663,6 +33658,8 @@ GameObject:
   - component: {fileID: 1499918797}
   - component: {fileID: 1499918799}
   - component: {fileID: 1499918798}
+  - component: {fileID: 1499918801}
+  - component: {fileID: 1499918800}
   m_Layer: 0
   m_Name: Zylinder.001 (1)
   m_TagString: Untagged
@@ -33742,8 +33739,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499918796}
   m_Mesh: {fileID: 3708161096541314799, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1499918800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33756,6 +33751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -33784,7 +33780,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009993915, y: 0.0009987828, z: 0.008000002}
   m_Center: {x: 0.000000010506483, y: 0.0000006238699, z: -0.0000019073486}
->>>>>>> Stashed changes
 --- !u!1 &1508401908
 GameObject:
   m_ObjectHideFlags: 0
@@ -39496,18 +39491,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795092564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
-<<<<<<< Updated upstream
   normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-=======
-  hoverColor: {r: 1, g: 0, b: 1, a: 1}
->>>>>>> Stashed changes
-  fadeSpeed: 5.03
+  fadeSpeed: 5
   onClick:
     m_PersistentCalls:
       m_Calls: []
@@ -41135,6 +41126,8 @@ GameObject:
   - component: {fileID: 1850791476}
   - component: {fileID: 1850791478}
   - component: {fileID: 1850791477}
+  - component: {fileID: 1850791480}
+  - component: {fileID: 1850791479}
   m_Layer: 0
   m_Name: Zylinder.029 (1)
   m_TagString: Untagged
@@ -41214,8 +41207,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850791475}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1850791479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41228,6 +41219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -41256,7 +41248,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009993913, y: 0.0009987829, z: 0.008000002}
   m_Center: {x: 0.0000000049185473, y: 0.0000006089686, z: -6.90943e-14}
->>>>>>> Stashed changes
 --- !u!1 &1863312755
 GameObject:
   m_ObjectHideFlags: 0
@@ -44306,6 +44297,8 @@ GameObject:
   - component: {fileID: 2004188356}
   - component: {fileID: 2004188358}
   - component: {fileID: 2004188357}
+  - component: {fileID: 2004188360}
+  - component: {fileID: 2004188359}
   m_Layer: 0
   m_Name: Zylinder.029 (1)
   m_TagString: Untagged
@@ -44385,8 +44378,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004188355}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &2004188359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44399,6 +44390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -44427,7 +44419,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009993913, y: 0.0009987829, z: 0.008000002}
   m_Center: {x: -0.0000000025320332, y: 0.0000006089686, z: -6.90943e-14}
->>>>>>> Stashed changes
 --- !u!1 &2009604909
 GameObject:
   m_ObjectHideFlags: 0
@@ -44532,11 +44523,8 @@ GameObject:
   - component: {fileID: 2015255884}
   - component: {fileID: 2015255883}
   - component: {fileID: 2015255887}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 2015255888}
   - component: {fileID: 2015255889}
->>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Run
   m_TagString: Untagged
@@ -44576,7 +44564,7 @@ MonoBehaviour:
   returnSpeed: 30
   pressDirection: {x: 1, y: 0, z: 0}
   useKeyboardInput: 0
-  activationKey: 101
+  activationKey: 323
 --- !u!136 &2015255884
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -44592,7 +44580,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -44684,8 +44672,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
-<<<<<<< Updated upstream
-=======
 --- !u!114 &2015255888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44698,6 +44684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -44814,7 +44801,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> Stashed changes
 --- !u!1 &2016229505
 GameObject:
   m_ObjectHideFlags: 0
@@ -46492,6 +46478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -46839,6 +46826,8 @@ GameObject:
   - component: {fileID: 2091807078}
   - component: {fileID: 2091807080}
   - component: {fileID: 2091807079}
+  - component: {fileID: 2091807082}
+  - component: {fileID: 2091807081}
   m_Layer: 0
   m_Name: Zylinder.029 (1)
   m_TagString: Untagged
@@ -46918,8 +46907,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091807077}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &2091807081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46932,6 +46919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -47007,6 +46995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 1, g: 0, b: 1, a: 1}
   fadeSpeed: 5
   onClick:
@@ -47092,7 +47081,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092255890}
   m_Mesh: {fileID: -8394813939113103330, guid: 563ba023c350c3547a7dd45c218e6cf3, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &2096156034
 GameObject:
   m_ObjectHideFlags: 0
@@ -47759,11 +47747,8 @@ GameObject:
   - component: {fileID: 2116365976}
   - component: {fileID: 2116365975}
   - component: {fileID: 2116365979}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 2116365980}
   - component: {fileID: 2116365981}
->>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Stop
   m_TagString: Untagged
@@ -47803,7 +47788,7 @@ MonoBehaviour:
   returnSpeed: 30
   pressDirection: {x: 1, y: 0, z: 0}
   useKeyboardInput: 0
-  activationKey: 101
+  activationKey: 323
 --- !u!136 &2116365976
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47911,8 +47896,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
-<<<<<<< Updated upstream
-=======
 --- !u!114 &2116365980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47925,6 +47908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e927ceaf241dd928d45e73954b3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonColorChange
+  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hoverColor: {r: 0.8627452, g: 0.07843138, b: 0.2352941, a: 1}
   fadeSpeed: 7
   onClick:
@@ -48041,7 +48025,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> Stashed changes
 --- !u!1 &2116599959
 GameObject:
   m_ObjectHideFlags: 0
