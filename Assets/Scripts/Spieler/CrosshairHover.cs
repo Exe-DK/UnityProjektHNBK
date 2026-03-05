@@ -3,21 +3,22 @@ using UnityEngine;
 public class CrosshairHover : MonoBehaviour
 {
     [Header("Fadenkreuz Einstellungen")]
-    
     [Tooltip("Wie weit der Raycast reicht (in Metern)")]
     [Range(0.1f, 50f)]
     public float erfassungsreichweite = 10f;
+
+    [Header("Layer Filter")]
+    [Tooltip("Wähle hier den Layer 'Buttons' aus")]
+    public LayerMask interactableLayer = ~0; // Standard: Alles
 
     [Header("Debug")]
     [Tooltip("Zeigt den Raycast in der Scene-Ansicht")]
     public bool debugRaycast = false;
 
-    // Kein Start() nötig - hält es simpel
     private ButtonColorChange lastHoveredButton = null;
 
     private void Update()
     {
-        // Unity 6: Camera.main ist weiterhin gültig
         if (Camera.main == null) return;
 
         Ray ray = Camera.main.ScreenPointToRay(
@@ -26,16 +27,26 @@ public class CrosshairHover : MonoBehaviour
 
         ButtonColorChange currentButton = null;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, erfassungsreichweite))
-        {
-            hit.collider.TryGetComponent(out currentButton);
+        // RaycastAll - geht durch ALLE Objekte durch
+        RaycastHit[] hits = Physics.RaycastAll(ray, erfassungsreichweite, interactableLayer);
 
-            if (debugRaycast)
-                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green);
-        }
-        else
+        // Nach Entfernung sortieren (nächstes zuerst)
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit hit in hits)
         {
-            if (debugRaycast)
+            if (hit.collider.TryGetComponent(out ButtonColorChange button))
+            {
+                currentButton = button;
+                break; // Nächsten Button gefunden, fertig
+            }
+        }
+
+        if (debugRaycast)
+        {
+            if (currentButton != null)
+                Debug.DrawRay(ray.origin, ray.direction * erfassungsreichweite, Color.green);
+            else
                 Debug.DrawRay(ray.origin, ray.direction * erfassungsreichweite, Color.red);
         }
 
