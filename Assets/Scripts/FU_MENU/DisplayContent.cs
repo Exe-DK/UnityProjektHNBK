@@ -77,14 +77,14 @@ public class DisplayContent : MonoBehaviour
         }
     }
 
-    void NextPage()
+    public void NextPage()
     {
         currentPage = (currentPage + 1) % pages.GetLength(0);
         UpdateDisplay();
         StartCoroutine(PageTransitionEffect());
     }
 
-    void PreviousPage()
+    public void PreviousPage()
     {
         currentPage = (currentPage - 1 + pages.GetLength(0)) % pages.GetLength(0);
         UpdateDisplay();
