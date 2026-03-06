@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MotorDrehung : MonoBehaviour
 {
+    public static bool motorLäuft = false;
+    public AudioSource motorSound;
 
-    // Start wird nur zum Start abgerufen
-    void Start()
-    {
-
-    }
-
-    // Update wird als Schleife immer wieder aufgerufen
     void Update()
     {
+        if (!motorLäuft)
+        {
+            if (motorSound.isPlaying) motorSound.Stop();
+            return;
+        }
+        
+        if (!motorSound.isPlaying) motorSound.Play();
+        
         float Drehzahl = Berechnung.nAP;
-        //Debug.Log(Drehzahl);
         transform.Rotate(Vector3.up * Time.deltaTime * Drehzahl);
     }
 }
