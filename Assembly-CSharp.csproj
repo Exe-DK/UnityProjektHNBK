@@ -59,6 +59,7 @@
     <Compile Include="Assets\BuchsenManager.cs" />
     <Compile Include="Assets\Scripts\Kennlinie.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
+    <Compile Include="Assets\Scripts\KennlinieKH.cs" />
     <Compile Include="Assets\Scripts\ReglerDrehung.cs" />
     <Compile Include="Assets\Scripts\OpenUI.cs" />
     <Compile Include="Assets\Scripts\Spieler\PlayerInteraction.cs" />

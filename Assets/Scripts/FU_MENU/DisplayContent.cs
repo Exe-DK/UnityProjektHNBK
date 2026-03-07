@@ -133,7 +133,7 @@ public class DisplayContent : MonoBehaviour
 
     void UpdateLiveValues()
     {
-        Berechnung berechnung = FindObjectOfType<Berechnung>();
+        Berechnung berechnung = FindFirstObjectByType<Berechnung>();
         if (berechnung == null) return;
 
         // Motor läuft nicht → Nullwerte anzeigen
@@ -172,7 +172,7 @@ public class DisplayContent : MonoBehaviour
         }
         else if (currentPage == 4)
         {
-            Daten1.text = "Spannung U: " + berechnung.Spannung.ToString("F2") + "V";
+            Daten1.text = "Spannung U: " + Berechnung.Spannung.ToString("F2") + "V";
             Daten4.text = "Frequenz f: " + berechnung.synchronFrequenz.ToString("F2") + "Hz";
             Daten2.text = "Strom I : " + berechnung.Iap.ToString("F2") + "A";
             Daten5.text = "Zwischenkreisspannung U<sub>z</sub>: 537,5V";

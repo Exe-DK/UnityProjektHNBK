@@ -41,7 +41,7 @@ public class Berechnung : MonoBehaviour
     public float Schlupf;
     public float Kippschlupf;
     public float synchronFrequenz;
-    public float Spannung;
+    public static float Spannung;
     public float Drehmoment;
     public float DrehmomentAP;
     public float SchlupfAP;
