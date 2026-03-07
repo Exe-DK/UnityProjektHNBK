@@ -52,6 +52,11 @@ public class Berechnung : MonoBehaviour
     public float Wirkungsgrad;
     public float Iap;
 
+    [Header("Referenzen")]
+    public RunController runController;
+
+    private bool überlastAusgelöst = false;
+
     void Start()
     {
         if (drehmomentText == null) Debug.LogError("drehmomentText nicht zugewiesen!");
@@ -60,12 +65,14 @@ public class Berechnung : MonoBehaviour
         if (stromText == null) Debug.LogError("stromText nicht zugewiesen!");
         if (drehmoment2Text == null) Debug.LogError("drehmoment2Text nicht zugewiesen!");
         if (drehzahl2Text == null) Debug.LogError("drehzahl2Text nicht zugewiesen!");
+        if (runController == null)
+            runController = FindFirstObjectByType<RunController>();
     }
 
     void Update()
     {
         // ───────────────────────────────────────────
-        // Motor aus → alles auf "Aus" setzen
+        // Motor aus → prüfen ob Überlast oder normaler Stop
         // ───────────────────────────────────────────
         if (!MotorDrehung.motorLäuft)
         {
@@ -73,9 +80,22 @@ public class Berechnung : MonoBehaviour
             Map = 0f;
             nI = 0f;
 
-            SetzeAlleTexte("Aus");
+            if (überlastAusgelöst)
+            {
+                SetzeAlleTexte("Ueberlast!");
+            }
+            else
+            {
+                SetzeAlleTexte("Aus");
+            }
             return;
         }
+
+        // ───────────────────────────────────────────
+        // Motor wurde neu gestartet (Run gedrückt)
+        // → Überlast-Flag zurücksetzen
+        // ───────────────────────────────────────────
+        überlastAusgelöst = false;
 
         // ───────────────────────────────────────────
         // Werte vom Regler und Bremse holen
@@ -138,21 +158,31 @@ public class Berechnung : MonoBehaviour
         // Strom am Arbeitspunkt
         Iap = Nennstrom * (DrehmomentAP / Nennmoment);
 
+        // ───────────────────────────────────────────
         // Prüfen ob Kippmoment überschritten
-        if (DrehmomentAP < Kippmoment)
+        // ───────────────────────────────────────────
+        if (DrehmomentAP >= Kippmoment)
         {
-            nAP = DrehzahlAP;
-            Map = DrehmomentAP;
-        }
-        else
-        {
-            // Motor kippt → bleibt stehen
+            // Überlast! Motor kippt → einmalig Stop auslösen
+            if (!überlastAusgelöst)
+            {
+                überlastAusgelöst = true;
+                runController.OnStopButtonPressed();
+            }
+
             nAP = 0f;
             Map = 0f;
+            nI = 0f;
 
-            SetzeAlleTexte("Überlast!");
+            SetzeAlleTexte("Ueberlast!");
             return;
         }
+
+        // ───────────────────────────────────────────
+        // Normaler Betrieb - Arbeitspunkt setzen
+        // ───────────────────────────────────────────
+        nAP = DrehzahlAP;
+        Map = DrehmomentAP;
 
         // Strom aus Ersatzschaltbild
         float impedanz = Mathf.Sqrt(Mathf.Pow(RotorWirkwiderstand / SchlupfAP, 2f) + Mathf.Pow(Hauptblindwiderstand, 2f));
@@ -170,7 +200,7 @@ public class Berechnung : MonoBehaviour
         // UI aktualisieren
         // ───────────────────────────────────────────
         if (drehmomentText != null) drehmomentText.text = Map.ToString("F2") + " Nm";
-        if (drehzahlText != null) drehzahlText.text = nAP.ToString("F0") + " min⁻¹";
+        if (drehzahlText != null) drehzahlText.text = nAP.ToString("F0") + " 1/min";
         if (bremseText != null) bremseText.text = drehmomentBremse.ToString("F1") + " Nm";
         if (stromText != null) stromText.text = nI.ToString("F2") + " A";
         if (drehmoment2Text != null) drehmoment2Text.text = Map.ToString("F2") + " Nm";
