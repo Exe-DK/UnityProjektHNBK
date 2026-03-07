@@ -2,7 +2,6 @@
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Hardware;
 
 public class DisplayContent : MonoBehaviour
 {
@@ -135,26 +134,50 @@ public class DisplayContent : MonoBehaviour
     void UpdateLiveValues()
     {
         Berechnung berechnung = FindObjectOfType<Berechnung>();
-        if (berechnung != null)
+        if (berechnung == null) return;
+
+        // Motor läuft nicht → Nullwerte anzeigen
+        if (!MotorDrehung.motorLäuft)
         {
             if (currentPage == 3)
             {
-                Daten1.text = "Drehzahl n: " + berechnung.DrehzahlAP.ToString("F2") + " 1/min";
-                Daten4.text = "Drehmoment M: " + berechnung.DrehmomentAP.ToString("F2") + " Nm";
-                Daten2.text = berechnung.synchronFrequenz != 0 ? "Schlupf : " + (berechnung.SchlupfAP * 100).ToString("F2") + "%" : "Schlupf : -";
-                Daten5.text = "P<sub>ab</sub>: " + berechnung.Pab.ToString("F2") + " W";
-                Daten3.text = "P<sub>zu</sub>: " + berechnung.Pzu.ToString("F2") + " W";
-                Daten6.text = "Wirkungsgrad: " + berechnung.Wirkungsgrad.ToString("F2") + " %";
+                Daten1.text = "Drehzahl n: 0 1/min";
+                Daten2.text = "Schlupf : 0%";
+                Daten3.text = "P<sub>zu</sub>: 0 W";
+                Daten4.text = "Drehmoment M: 0 Nm";
+                Daten5.text = "P<sub>ab</sub>: 0 W";
+                Daten6.text = "Wirkungsgrad: 0 %";
             }
             else if (currentPage == 4)
             {
-                Daten1.text = "Spannung U: " + berechnung.Spannung.ToString("F2") + "V";
-                Daten4.text = "Frequenz f: " + berechnung.synchronFrequenz.ToString("F2") + "Hz";
-                Daten2.text = "Strom I : " + berechnung.Iap.ToString("F2") +"A";
-                Daten5.text = "Zwischenkreisspannung U<sub>z</sub>: 537,5V";
+                Daten1.text = "Spannung U: 0V";
+                Daten2.text = "Strom I : 0A";
                 Daten3.text = "";
+                Daten4.text = "Frequenz f: 0Hz";
+                Daten5.text = "Zwischenkreisspannung U<sub>z</sub>: 537,5V";
                 Daten6.text = " ";
             }
+            return;
+        }
+
+        // Motor läuft → berechnete Werte anzeigen
+        if (currentPage == 3)
+        {
+            Daten1.text = "Drehzahl n: " + berechnung.DrehzahlAP.ToString("F2") + " 1/min";
+            Daten4.text = "Drehmoment M: " + berechnung.DrehmomentAP.ToString("F2") + " Nm";
+            Daten2.text = berechnung.synchronFrequenz != 0 ? "Schlupf : " + (berechnung.SchlupfAP * 100).ToString("F2") + "%" : "Schlupf : -";
+            Daten5.text = "P<sub>ab</sub>: " + berechnung.Pab.ToString("F2") + " W";
+            Daten3.text = "P<sub>zu</sub>: " + berechnung.Pzu.ToString("F2") + " W";
+            Daten6.text = "Wirkungsgrad: " + berechnung.Wirkungsgrad.ToString("F2") + " %";
+        }
+        else if (currentPage == 4)
+        {
+            Daten1.text = "Spannung U: " + berechnung.Spannung.ToString("F2") + "V";
+            Daten4.text = "Frequenz f: " + berechnung.synchronFrequenz.ToString("F2") + "Hz";
+            Daten2.text = "Strom I : " + berechnung.Iap.ToString("F2") + "A";
+            Daten5.text = "Zwischenkreisspannung U<sub>z</sub>: 537,5V";
+            Daten3.text = "";
+            Daten6.text = " ";
         }
     }
 
