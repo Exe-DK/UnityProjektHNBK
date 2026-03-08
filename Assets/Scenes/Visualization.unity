@@ -18899,9 +18899,9 @@ MonoBehaviour:
   effektivColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   lineThickness: 4
   amplitude: 0.95
-  zeitfensterMs: 20
+  zeitfensterMs: 100
   maxVolt: 600
-  scrollSpeed: 0.5
+  scrollSpeed: 1
   achsenBreite: 40
   achsenHoehe: 20
   randRechts: 90
