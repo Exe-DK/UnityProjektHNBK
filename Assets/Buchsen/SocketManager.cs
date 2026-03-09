@@ -68,6 +68,9 @@ public class SocketManager : MonoBehaviour
         currentPlug = label;
         isOccupied = true;
 
+    // Stecker als benutzt markieren!
+        CableManager.Instance.SetPlugUsed(label, this);
+
         Color col = CableManager.Instance.GetColorForLabel(label);
         plugRenderer.material.color = col;
 
