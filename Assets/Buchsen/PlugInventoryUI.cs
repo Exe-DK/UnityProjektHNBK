@@ -8,11 +8,11 @@ public class PlugInventoryUI : MonoBehaviour
     public static PlugInventoryUI Instance;
 
     [Header("UI Referenzen")]
-    public GameObject panel;                  // Das ganze Panel
-    public Transform buttonContainer;         // Parent für die Buttons
-    public GameObject buttonPrefab;           // Button Prefab
-    public TextMeshProUGUI headerText;        // "Was wollen Sie der Buchse zuweisen?"
-    public Button closeButton;                // Schließen-Button
+    public GameObject panel;
+    public Transform buttonContainer;
+    public GameObject buttonPrefab;
+    public TextMeshProUGUI headerText;
+    public Button closeButton;
 
     private SocketManager currentSocket;
     private List<GameObject> spawnedButtons = new List<GameObject>();
@@ -34,20 +34,39 @@ public class PlugInventoryUI : MonoBehaviour
             Destroy(go);
         spawnedButtons.Clear();
 
+        // === Entfernen-Button wenn Buchse belegt ===
+        if (socket.isOccupied)
+        {
+            GameObject removeBtn = Instantiate(buttonPrefab, buttonContainer);
+            spawnedButtons.Add(removeBtn);
+
+            TextMeshProUGUI removeText = removeBtn.GetComponentInChildren<TextMeshProUGUI>();
+            if (removeText != null)
+                removeText.text = "✖ Entfernen";
+
+            Image removeImage = removeBtn.GetComponent<Image>();
+            if (removeImage != null)
+                removeImage.color = new Color(0.8f, 0.2f, 0.2f);
+
+            if (removeText != null)
+                removeText.color = Color.white;
+
+            Button removeBtnComp = removeBtn.GetComponent<Button>();
+            removeBtnComp.onClick.AddListener(() =>
+            {
+                currentSocket.RemovePlug();
+                ClosePanel();
+            });
+        }
+
         // Buttons für alle verfügbaren Stecker erstellen
         foreach (Cable cable in CableManager.Instance.cables)
         {
-            // A-Seite Button
             if (!cable.aUsed)
-            {
                 CreateButton(cable.labelA, cable.cableColor);
-            }
 
-            // B-Seite Button
             if (!cable.bUsed)
-            {
                 CreateButton(cable.labelB, cable.cableColor);
-            }
         }
 
         panel.SetActive(true);
@@ -58,26 +77,22 @@ public class PlugInventoryUI : MonoBehaviour
         GameObject btn = Instantiate(buttonPrefab, buttonContainer);
         spawnedButtons.Add(btn);
 
-        // Text setzen
         TextMeshProUGUI btnText = btn.GetComponentInChildren<TextMeshProUGUI>();
         if (btnText != null)
             btnText.text = label;
 
-        // Farbe setzen
         Image btnImage = btn.GetComponent<Image>();
         if (btnImage != null)
             btnImage.color = color;
 
-        // Textfarbe anpassen (dunkle Hintergründe → weißer Text)
         if (btnText != null)
         {
             float brightness = color.r * 0.299f + color.g * 0.587f + color.b * 0.114f;
             btnText.color = brightness < 0.5f ? Color.white : Color.black;
         }
 
-        // Click Event
         Button buttonComp = btn.GetComponent<Button>();
-        string plugLabel = label; // Closure-safe
+        string plugLabel = label;
         buttonComp.onClick.AddListener(() => OnPlugSelected(plugLabel));
     }
 
@@ -85,7 +100,6 @@ public class PlugInventoryUI : MonoBehaviour
     {
         if (currentSocket != null)
         {
-            // Falls schon ein Stecker drin ist, erst entfernen
             if (currentSocket.isOccupied)
                 currentSocket.RemovePlug();
 
@@ -98,6 +112,8 @@ public class PlugInventoryUI : MonoBehaviour
     public void ClosePanel()
     {
         panel.SetActive(false);
+        if (currentSocket != null)
+            currentSocket.highlightRing.SetActive(false);
         currentSocket = null;
         PlayerFreeze.Instance.Unfreeze();
     }
