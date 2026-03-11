@@ -18,6 +18,8 @@ public class RunController : MonoBehaviour
     public AudioClip wrongSound;
     private AudioSource audioSource;
 
+    public ResultPanel resultPanel;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -25,6 +27,8 @@ public class RunController : MonoBehaviour
 
     public void OnRunButtonPressed()
     {
+        connectionsCorrect = TaskManager.Instance.CheckAll();
+
         videoPlayer.clip = countdownVideo;
         videoPlayer.playbackSpeed = countdownSpeed;
         videoPlayer.Play();
@@ -35,6 +39,7 @@ public class RunController : MonoBehaviour
     {
         videoPlayer.loopPointReached -= OnCountdownEnde;
         videoPlayer.loopPointReached -= OnErfolgVideoEnde;
+        videoPlayer.loopPointReached -= OnFehlschlagVideoEnde;
         videoPlayer.Stop();
 
         MotorDrehung.motorLäuft = false;
@@ -43,6 +48,7 @@ public class RunController : MonoBehaviour
         videoPlayer.playbackSpeed = fehlschlagSpeed;
         videoPlayer.Play();
         audioSource.PlayOneShot(wrongSound);
+        videoPlayer.loopPointReached += OnFehlschlagVideoEnde;
     }
 
     void OnCountdownEnde(VideoPlayer vp)
@@ -63,6 +69,7 @@ public class RunController : MonoBehaviour
             videoPlayer.playbackSpeed = fehlschlagSpeed;
             videoPlayer.Play();
             audioSource.PlayOneShot(wrongSound);
+            videoPlayer.loopPointReached += OnFehlschlagVideoEnde;
         }
     }
 
@@ -70,5 +77,12 @@ public class RunController : MonoBehaviour
     {
         videoPlayer.loopPointReached -= OnErfolgVideoEnde;
         MotorDrehung.motorLäuft = true;
+        resultPanel.ShowResults();
+    }
+
+    void OnFehlschlagVideoEnde(VideoPlayer vp)
+    {
+        videoPlayer.loopPointReached -= OnFehlschlagVideoEnde;
+        resultPanel.ShowResults();
     }
 }

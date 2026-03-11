@@ -19,9 +19,13 @@ public class PlugInventoryUI : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
-        panel.SetActive(false);
-        closeButton.onClick.AddListener(ClosePanel);
+    Instance = this;
+    panel.SetActive(false);
+    closeButton.onClick.AddListener(() =>
+    {
+        ClosePanel();
+        PlayerFreeze.Instance.Unfreeze();
+    });
     }
 
     public void OpenForSocket(SocketManager socket)
@@ -56,6 +60,7 @@ public class PlugInventoryUI : MonoBehaviour
             {
                 currentSocket.RemovePlug();
                 ClosePanel();
+                PlayerFreeze.Instance.Unfreeze();
             });
         }
 
@@ -94,6 +99,11 @@ public class PlugInventoryUI : MonoBehaviour
         Button buttonComp = btn.GetComponent<Button>();
         string plugLabel = label;
         buttonComp.onClick.AddListener(() => OnPlugSelected(plugLabel));
+
+        //Drag & Drop hinzufügen
+        Canvas canvas = panel.GetComponentInParent<Canvas>();
+        var draggable = btn.AddComponent<DraggablePlug>();
+        draggable.Setup(label, color, canvas);
     }
 
     void OnPlugSelected(string label)
@@ -107,6 +117,7 @@ public class PlugInventoryUI : MonoBehaviour
         }
 
         ClosePanel();
+        PlayerFreeze.Instance.Unfreeze();
     }
 
     public void ClosePanel()
@@ -115,6 +126,6 @@ public class PlugInventoryUI : MonoBehaviour
         if (currentSocket != null)
             currentSocket.highlightRing.SetActive(false);
         currentSocket = null;
-        PlayerFreeze.Instance.Unfreeze();
+       
     }
 }
