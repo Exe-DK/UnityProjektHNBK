@@ -86,4 +86,18 @@ public class CableManager : MonoBehaviour
         Cable c = FindCableByLabel(label);
         return c != null ? c.cableColor : Color.white;
     }
+
+    /// <summary>
+/// Findet ein Kabel anhand eines seiner Labels (A oder B)
+/// </summary>
+public Cable GetCableByLabel(string label)
+{
+    foreach (Cable cable in cables)
+    {
+        if (cable.labelA == label || cable.labelB == label)
+            return cable;
+    }
+    return null;
+}
+
 }
