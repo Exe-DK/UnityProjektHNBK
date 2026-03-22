@@ -34,6 +34,9 @@ TagManager:
   - Trigger Plus
   - Trigger Minus
   - Frequenzumrichter
+  - Tag 30 Motorklemmbrett
+  - Trigger Motorklemmbrett
+  - Trigger Bremswiderstand Extern
   layers:
   - Default
   - TransparentFX
