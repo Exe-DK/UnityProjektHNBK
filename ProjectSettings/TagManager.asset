@@ -37,6 +37,8 @@ TagManager:
   - Tag 30 Motorklemmbrett
   - Trigger Motorklemmbrett
   - Trigger Bremswiderstand Extern
+  - Trigger Anschlussplan_und_Aufgabe
+  - "Trigger R\xFCckmeldungmonitor links"
   layers:
   - Default
   - TransparentFX

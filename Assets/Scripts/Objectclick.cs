@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Unity.Cinemachine.IInputAxisOwner.AxisDescriptor;
 using static UnityEngine.Rendering.DebugUI;
 
 public class Objectclick : MonoBehaviour
@@ -30,7 +31,10 @@ public class Objectclick : MonoBehaviour
     public GameObject Erde;
     public GameObject PanelMotorklemmbrett;
     public GameObject PanelBremswiderstandExtern; // Neues Panel hinzugefügt
-    
+    public GameObject PanelAnschlussplan_und_Aufgabe; // Neues Panel hinzugefügt
+    public GameObject PanelRückmeldungmonitorlinks; // Neues Panel hinzugefügt
+
+
 
 
     [Header("Player Object")]
@@ -104,6 +108,10 @@ public class Objectclick : MonoBehaviour
                     OpenPanel(PanelMotorklemmbrett);
                 else if (hit.collider.CompareTag("Trigger Bremswiderstand Extern"))
                     OpenPanel(PanelBremswiderstandExtern); // Neuer Trigger hinzugefügt
+                else if (hit.collider.CompareTag("Trigger Anschlussplan_und_Aufgabe"))
+                    OpenPanel(PanelAnschlussplan_und_Aufgabe); // Neuer Trigger hinzugefügt
+                else if (hit.collider.CompareTag("Trigger Rückmeldungmonitor links"))
+                    OpenPanel(PanelRückmeldungmonitorlinks); // Neuer Trigger hinzugefügt
             }
         }
 
@@ -190,6 +198,10 @@ public class Objectclick : MonoBehaviour
         if (Panel01U != null) Panel01U.SetActive(false);
         if (PanelMotorklemmbrett != null) PanelMotorklemmbrett.SetActive(false);
         if (PanelBremswiderstandExtern != null) PanelBremswiderstandExtern.SetActive(false); // Neues Panel hinzugefügt
+        if (PanelAnschlussplan_und_Aufgabe != null) PanelAnschlussplan_und_Aufgabe.SetActive(false);
+        if (PanelRückmeldungmonitorlinks != null) PanelRückmeldungmonitorlinks.SetActive(false);
+
+
     }
 
     private void PrintName(GameObject go)
