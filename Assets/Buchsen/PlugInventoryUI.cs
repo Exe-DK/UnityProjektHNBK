@@ -19,13 +19,20 @@ public class PlugInventoryUI : MonoBehaviour
 
     void Awake()
     {
-    Instance = this;
-    panel.SetActive(false);
-    closeButton.onClick.AddListener(() =>
+        Instance = this;
+        panel.SetActive(false);
+        closeButton.onClick.AddListener(() =>
+        {
+            ClosePanelAndUnfreeze();
+        });
+    }
+
+    void Update()
     {
-        ClosePanel();
-        PlayerFreeze.Instance.Unfreeze();
-    });
+        if (panel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            ClosePanelAndUnfreeze();
+        }
     }
 
     public void OpenForSocket(SocketManager socket)
@@ -33,12 +40,10 @@ public class PlugInventoryUI : MonoBehaviour
         currentSocket = socket;
         headerText.text = "Buchse: " + socket.socketName + "\nWas wollen Sie zuweisen?";
 
-        // Alte Buttons löschen
         foreach (GameObject go in spawnedButtons)
             Destroy(go);
         spawnedButtons.Clear();
 
-        // === Entfernen-Button wenn Buchse belegt ===
         if (socket.isOccupied)
         {
             GameObject removeBtn = Instantiate(buttonPrefab, buttonContainer);
@@ -59,12 +64,10 @@ public class PlugInventoryUI : MonoBehaviour
             removeBtnComp.onClick.AddListener(() =>
             {
                 currentSocket.RemovePlug();
-                ClosePanel();
-                PlayerFreeze.Instance.Unfreeze();
+                ClosePanelAndUnfreeze();
             });
         }
 
-        // Buttons für alle verfügbaren Stecker erstellen
         foreach (Cable cable in CableManager.Instance.cables)
         {
             if (!cable.aUsed)
@@ -100,7 +103,6 @@ public class PlugInventoryUI : MonoBehaviour
         string plugLabel = label;
         buttonComp.onClick.AddListener(() => OnPlugSelected(plugLabel));
 
-        //Drag & Drop hinzufügen
         Canvas canvas = panel.GetComponentInParent<Canvas>();
         var draggable = btn.AddComponent<DraggablePlug>();
         draggable.Setup(label, color, canvas);
@@ -116,16 +118,33 @@ public class PlugInventoryUI : MonoBehaviour
             currentSocket.InsertPlug(label);
         }
 
-        ClosePanel();
+        ClosePanelAndUnfreeze();
+    }
+
+    /// <summary>
+    /// Schließt das Panel UND gibt den Spieler immer frei.
+    /// </summary>
+    public void ClosePanelAndUnfreeze()
+    {
+        panel.SetActive(false);
+
+        if (currentSocket != null)
+            currentSocket.highlightRing.SetActive(false);
+
+        currentSocket = null;
         PlayerFreeze.Instance.Unfreeze();
     }
 
+    /// <summary>
+    /// Nur Panel schließen ohne Unfreeze (falls extern gebraucht).
+    /// </summary>
     public void ClosePanel()
     {
         panel.SetActive(false);
+
         if (currentSocket != null)
             currentSocket.highlightRing.SetActive(false);
+
         currentSocket = null;
-       
     }
 }
