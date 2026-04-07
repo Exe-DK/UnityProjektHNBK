@@ -33,7 +33,7 @@ public class Objectclick : MonoBehaviour
     public GameObject PanelBremswiderstandExtern; // Neues Panel hinzugefügt
     public GameObject PanelAnschlussplan_und_Aufgabe; // Neues Panel hinzugefügt
     public GameObject PanelRückmeldungmonitorlinks; // Neues Panel hinzugefügt
-
+    public GameObject PanelRückmeldungmonitorrechts; // Neues Panel hinzugefügt
 
 
 
@@ -112,6 +112,8 @@ public class Objectclick : MonoBehaviour
                     OpenPanel(PanelAnschlussplan_und_Aufgabe); // Neuer Trigger hinzugefügt
                 else if (hit.collider.CompareTag("Trigger Rückmeldungmonitor links"))
                     OpenPanel(PanelRückmeldungmonitorlinks); // Neuer Trigger hinzugefügt
+                else if (hit.collider.CompareTag("Trigger Rückmeldungsmonitor rechts"))
+                    OpenPanel(PanelRückmeldungmonitorrechts); // Neuer Trigger hinzugefügt
             }
         }
 
@@ -200,6 +202,8 @@ public class Objectclick : MonoBehaviour
         if (PanelBremswiderstandExtern != null) PanelBremswiderstandExtern.SetActive(false); // Neues Panel hinzugefügt
         if (PanelAnschlussplan_und_Aufgabe != null) PanelAnschlussplan_und_Aufgabe.SetActive(false);
         if (PanelRückmeldungmonitorlinks != null) PanelRückmeldungmonitorlinks.SetActive(false);
+        if (PanelRückmeldungmonitorrechts != null) PanelRückmeldungmonitorrechts.SetActive(false);
+
 
 
     }

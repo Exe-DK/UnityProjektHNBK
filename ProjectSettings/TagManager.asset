@@ -39,6 +39,7 @@ TagManager:
   - Trigger Bremswiderstand Extern
   - Trigger Anschlussplan_und_Aufgabe
   - "Trigger R\xFCckmeldungmonitor links"
+  - "Trigger R\xFCckmeldungsmonitor rechts"
   layers:
   - Default
   - TransparentFX
