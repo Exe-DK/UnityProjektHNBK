@@ -200,7 +200,8 @@ public class Objectclick : MonoBehaviour
         if (Panel01U != null) Panel01U.SetActive(false);
         if (PanelMotorklemmbrett != null) PanelMotorklemmbrett.SetActive(false);
         if (PanelBremswiderstandExtern != null) PanelBremswiderstandExtern.SetActive(false); // Neues Panel hinzugefügt
-        if (PanelAnschlussplan_und_Aufgabe != null) PanelAnschlussplan_und_Aufgabe.SetActive(false);
+
+        if (PanelAnschlussplan_und_Aufgabe != null) PanelAnschlussplan_und_Aufgabe.SetActive(false);  
         if (PanelRückmeldungmonitorlinks != null) PanelRückmeldungmonitorlinks.SetActive(false);
         if (PanelRückmeldungmonitorrechts != null) PanelRückmeldungmonitorrechts.SetActive(false);
 
