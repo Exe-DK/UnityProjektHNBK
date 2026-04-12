@@ -148,6 +148,7 @@
     <Compile Include="Assets\Buchse_Click.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Objectclick.cs" />
+    <Compile Include="Assets\Scenes\Uhr-Script.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
