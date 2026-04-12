@@ -21,6 +21,7 @@ public class RunController : MonoBehaviour
     public ResultPanel resultPanel;
 
     public GameObject uhrCanvas;
+    public GameObject datumCanvas;
 
     void Start()
     {
@@ -33,6 +34,9 @@ public class RunController : MonoBehaviour
 
         if (uhrCanvas != null)
             uhrCanvas.SetActive(false);
+
+        if (datumCanvas != null)
+            datumCanvas.SetActive(false);
 
         videoPlayer.clip = countdownVideo;
         videoPlayer.playbackSpeed = countdownSpeed;
@@ -89,5 +93,11 @@ public class RunController : MonoBehaviour
     {
         videoPlayer.loopPointReached -= OnFehlschlagVideoEnde;
         resultPanel.ShowResults();
+
+        if (uhrCanvas != null)
+            uhrCanvas.SetActive(true);
+
+        if (datumCanvas != null)
+            datumCanvas.SetActive(true);
     }
 }
