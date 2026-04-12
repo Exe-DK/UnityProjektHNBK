@@ -20,6 +20,8 @@ public class RunController : MonoBehaviour
 
     public ResultPanel resultPanel;
 
+    public GameObject uhrCanvas;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -28,6 +30,9 @@ public class RunController : MonoBehaviour
     public void OnRunButtonPressed()
     {
         connectionsCorrect = TaskManager.Instance.CheckAll();
+
+        if (uhrCanvas != null)
+            uhrCanvas.SetActive(false);
 
         videoPlayer.clip = countdownVideo;
         videoPlayer.playbackSpeed = countdownSpeed;
