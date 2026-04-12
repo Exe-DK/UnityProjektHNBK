@@ -10,4 +10,5 @@ public class DigitalClock : MonoBehaviour
     {
         uhrzeitText.text = DateTime.Now.ToString("HH:mm:ss");
     }
+    
 }
