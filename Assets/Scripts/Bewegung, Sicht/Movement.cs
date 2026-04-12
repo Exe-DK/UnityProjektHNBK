@@ -1,33 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] CharacterController controller;
-    [SerializeField] float speed = 1f;
+    [SerializeField] float speed = 5f;
     Vector2 horizontalInput;
 
-    Vector3 verticalVelocity = Vector3.zero;
-    [SerializeField] LayerMask groundMask;
-    bool isGrounded;
-
     // === Etagen-System ===
-    [Header("Etagen-Höhen (Y-Position)")]
-    [SerializeField] float[] etagen = { 1.4f, 1.8f, 2.2f };
-    [SerializeField] int startEtage = 1;
-    [SerializeField] float uebergangsGeschwindigkeit = 5f;
+    [Header("Etagen (Player Y-Position in Welt)")]
+    [SerializeField] float[] etagen = { 0f, 4f, 8f };
+    [SerializeField] int startEtage = 0;
+    [SerializeField] float uebergangsGeschwindigkeit = 10f;
 
     private int aktuelleEtage;
     private float zielHoehe;
+    private bool wechseltEtage = false;
+
+    // === Freeze-System ===
+    public static bool inputGesperrt = false;
 
     private void Start()
     {
         aktuelleEtage = startEtage;
         zielHoehe = etagen[aktuelleEtage];
 
-        // Startposition per CharacterController setzen
+        // Player auf Starthöhe setzen
         controller.enabled = false;
         Vector3 pos = transform.position;
         pos.y = zielHoehe;
@@ -37,34 +34,41 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        if (inputGesperrt) return;
+
         // === Etagen-Steuerung ===
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !wechseltEtage)
         {
             if (aktuelleEtage < etagen.Length - 1)
             {
                 aktuelleEtage++;
                 zielHoehe = etagen[aktuelleEtage];
+                wechseltEtage = true;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !wechseltEtage)
         {
             if (aktuelleEtage > 0)
             {
                 aktuelleEtage--;
                 zielHoehe = etagen[aktuelleEtage];
+                wechseltEtage = true;
             }
         }
 
-        // === Höhe sanft anpassen per controller.Move ===
-        float aktuelleHoehe = transform.position.y;
-        float differenz = zielHoehe - aktuelleHoehe;
+     // === Etagenwechsel (Player teleportieren) ===
+if (wechseltEtage)
+{
+    controller.enabled = false;
+    Vector3 pos = transform.position;
+    pos.y = zielHoehe;
+    transform.position = pos;
+    controller.enabled = true;
+    wechseltEtage = false;
+    return;
+}
 
-        if (Mathf.Abs(differenz) > 0.01f)
-        {
-            float schritt = differenz * uebergangsGeschwindigkeit * Time.deltaTime;
-            controller.Move(new Vector3(0f, schritt, 0f));
-        }
 
         // === Horizontale Bewegung ===
         Vector3 horizontalVelocity = (transform.right * horizontalInput.x + transform.forward * horizontalInput.y) * speed;
