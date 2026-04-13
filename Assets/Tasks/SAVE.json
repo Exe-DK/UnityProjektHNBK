@@ -1,0 +1,15 @@
+{
+    "stecker": [
+        { "label": "W1", "socket": "Rb1" },
+        { "label": "W2", "socket": "Rb2" },
+        { "label": "W2'", "socket": "(+) vom 440 Ω Widerstand" },
+        { "label": "PE", "socket": "ErdeB1" },
+        { "label": "PE'", "socket": "PE vom Widerstand" },
+        { "label": "BG", "socket": "GA" },
+        { "label": "BG'", "socket": "GIO" },
+        { "label": "BA", "socket": "A1U" },
+        { "label": "BA'", "socket": "A2U" },
+        { "label": "BRFR", "socket": "24VI" },
+        { "label": "BRFR'", "socket": "RFR" }
+    ]
+}
